@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-container">
+      <header>
+        <h2>Library</h2>
+      </header>
+      <section class="book-display">
+        <form action="#">
+          <label for="input-title">Title</label>
+          <input type="text" id="input-title" name="BTitle" />
+          <label for="input-author">Author</label>
+          <input type="text" id="input-author" name="BAuthor" />
+          <label for="input-pages">Pages</label>
+          <input type="number" id="input-pages" name="BPages" />
+
+          <fieldset>
+            <legend>Already read it?</legend>
+            <label for="read-yes">Yes</label>
+            <input type="radio" id="read-yes" name="read" value="true" />
+            <label for="read-no">No</label>
+            <input type="radio" id="read-no" name="read" value="false" />
+          </fieldset>
+          <button type="submit">+</button>
+        </form>
+      </section>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
