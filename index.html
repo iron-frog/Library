@@ -9,30 +9,41 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="overlay"></div>
     <div class="page-container">
       <header>
-        <h2>Library</h2>
+        <h1>Library</h1>
       </header>
-      <section class="book-display">
-        <form action="#">
-          <label for="input-title">Title</label>
-          <input type="text" id="input-title" name="BTitle" />
-          <label for="input-author">Author</label>
-          <input type="text" id="input-author" name="BAuthor" />
-          <label for="input-pages">Pages</label>
-          <input type="number" id="input-pages" name="BPages" />
-
-          <fieldset>
-            <legend>Already read it?</legend>
-            <label for="read-yes">Yes</label>
-            <input type="radio" id="read-yes" name="read" value="true" />
-            <label for="read-no">No</label>
-            <input type="radio" id="read-no" name="read" value="false" />
-          </fieldset>
-          <button type="submit">+</button>
-        </form>
-      </section>
+      <div class="main-container">
+        <section class="book-display"></section>
+        <div class="form-container">
+          <button class="show-formBtn">+</button>
+          <form action="#">
+            <button class="close-form">x</button>
+            <label for="input-title">Title</label>
+            <input type="text" id="input-title" name="BTitle" />
+            <label for="input-author">Author</label>
+            <input type="text" id="input-author" name="BAuthor" />
+            <label for="input-pages">Pages</label>
+            <input type="number" id="input-pages" name="BPages" />
+            <fieldset>
+              <legend>Already read it?</legend>
+              <label for="read-yes">Yes</label>
+              <input type="radio" id="read-yes" name="read" value="true" />
+              <label for="read-no">No</label>
+              <input
+                type="radio"
+                id="read-no"
+                name="read"
+                value="false"
+                checked
+              />
+            </fieldset>
+            <button type="submit">Add to Library</button>
+          </form>
+        </div>
+      </div>
     </div>
+    <script src="script.js"></script>
   </body>
-  <script src="script.js"></script>
 </html>

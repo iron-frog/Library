@@ -1,56 +1,129 @@
 button,
 input,
-fieldset {
+fieldset,
+body {
   border: none;
   padding: 0;
   margin: 0;
 }
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
+.overlay.activebg {
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: 0.5s;
+}
 .page-container {
   display: grid;
-  grid-template-rows: 1fr 5fr;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
   position: relative;
+}
+header,
+button,
+.book-card,
+form.active,
+.show-form {
+  box-shadow: 0px 2px 3px 1px grey;
 }
 
 header {
   display: flex;
   justify-content: center;
-  border-bottom: 1px solid black;
+  background-color: #d8e2dc;
 }
-
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(auto-fit, 1fr);
+  padding: 50px;
+  row-gap: 50px;
+  background-color: #ffe5d9;
+}
+.form-container {
+  display: grid;
+  grid-template-rows: 200px 500px;
+  row-gap: 50px;
+  column-gap: 50px;
+}
 .book-display {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+  grid-template-columns: repeat(auto-fit, 350px);
+  grid-auto-rows: 1fr;
   margin-top: 20px;
-  gap: 20px;
-  position: relative;
+  gap: 30px;
 }
 
 .book-card {
   display: grid;
   padding: 10px;
-  border: 1px solid black;
   border-radius: 1rem;
-  justify-items: center;
+  position: relative;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+  background-color: white;
 }
 
-button {
-  font-size: 10rem;
-  border-radius: 1rem;
+.title {
+  grid-column: 1/-1;
+  justify-self: center;
+}
+
+.book-card-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+}
+
+.book-card-row > p:first-child {
+  font-weight: bold;
+}
+
+button[type="submit"] {
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 5px;
+  border: 1px solid black;
+  margin-top: 10px;
+  width: 100%;
+  align-self: left;
+}
+
+button[type="submit"],
+.show-formBtn {
+  background-color: #d8e2dc;
 }
 
 button:hover {
-  background-color: pink;
-  transform: scale(0.99);
+  background-color: #f4acb7;
+  transform: scale(0.95);
 }
 
 form {
+  display: none;
+}
+form.active {
   display: grid;
   gap: 10px;
-  position: absolute;
-  left: 50%;
+  padding: 20px;
+  border-radius: 10px;
+  position: fixed;
   top: 50%;
-  min-width: 300px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+}
+.show-formBtn {
+  font-size: 10rem;
+  max-width: 200px;
+  border-radius: 10px;
 }
 
 input {
@@ -61,7 +134,9 @@ input {
 }
 
 label {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+  align-self: end;
+  font-weight: bold;
 }
 
 fieldset {
@@ -71,4 +146,49 @@ fieldset {
   grid-template-columns: 1fr 1fr;
   justify-items: left;
   margin-top: 10px;
+}
+
+.del-book,
+.close-form {
+  font-size: 2rem;
+  border-radius: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: lightcoral;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 75%;
+  left: 85%;
+}
+
+.close-form {
+  top: 10px;
+  left: 87%;
+}
+
+.del-book:hover {
+  background-color: red;
+}
+
+.read-status {
+  height: 30px;
+  align-self: center;
+  border-radius: 5px;
+  color: white;
+}
+
+.read-status.green {
+  background-color: green;
+}
+
+.read-status.red {
+  background-color: red;
+}
+
+@media (max-width: 805px) {
+  .main-container {
+    justify-items: center;
+  }
 }
